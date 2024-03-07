@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import Providers from "@/lib/provider";
 export const metadata: Metadata = {
   title: "React Query Training App",
   description: "purpose of learning react query",
 };
 
-const client = new QueryClient();
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -15,7 +14,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <QueryClientProvider client={client}>{children}</QueryClientProvider>
+        <Providers>
+          {children}
+        </Providers>
       </body>
     </html>
   );
