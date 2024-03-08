@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Providers from "@/lib/provider";
+import ReactQueryProvider from "@/utils/providers/ReactQueryProvider";
 export const metadata: Metadata = {
   title: "React Query Training App",
   description: "purpose of learning react query",
@@ -14,9 +14,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Providers>
+        <ReactQueryProvider>
           {children}
-        </Providers>
+        </ReactQueryProvider>
       </body>
     </html>
   );
